@@ -161,21 +161,19 @@ class Investment:
 
         def runner(self):
             while True:
-                introquestion = input("Thank you for choosing Alicia ROI Calculater today! Let's go ahead and click begin, please enter all data with a valid number.")
-                if (introquestion == "begin"):
+                introquestion = input("Thank you for choosing Alicia ROI Calculater today! Let's go ahead and click BEGIN or END to proceed. Please enter all data with a valid number.")
+                if introquestion == "END":
+                    print("Thank you for using Alicia's ROI Calculator")
+                    break
+                if introquestion == "BEGIN":
                     tmi = self.TotalMonthlyIncome()
                     tme = self.TotalMonthlyExpense()
                     coc = self.CashonCashFlow()
                     roi = self.ROIcalculations()
-
-                    print(f'Total Monthly Income: {tmi}')
-                    print(f'Total Monthly Expense: {tme}')
-                    print(f'Total Monthly Cash on Cash Flow: {coc}')
-                    print(f'Your ROI Calculation: {roi}')
-                
                 else:
                     print("Invalid, please click BEGIN or END to proceed.")
 
 projectinvestment = Investment()
+projectinvestment.runner()
 
 

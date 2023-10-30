@@ -27,12 +27,14 @@
 #ROI = $4,166.04 / $26,300 = 15.84%
 
 #DEFINE THE CLASS 
+#NameofClass 
 class Investment: 
     def __init__(self, rental_income, other_income, taxes, renovations, mortgage, repairs, vacancy, insurance, hoa, other_expenses, downpayment, closing_costs, utilities, other_purchase_costs):
         self.rental_income = rental_income + other_income
         self.expenses = taxes + renovations + mortgage + repairs + vacancy + insurance + hoa + other_expenses 
         self.cashoncash = downpayment + closing_costs + other_purchase_costs
-
+    
+    #define Total Monthly Income 
     def TotalMonthlyIncome(self):
         rental_income = int(input("Enter the annual rental income."))
         other_income = int(input("Enter any other income, if applicable."))
@@ -40,6 +42,7 @@ class Investment:
         TMI = rental_income + other_income
         return TMI
     
+    #define Total Monthly Expenses
     def TotalMonthlyExpense(self):
         renovations = int(input("Enter total cost of renovations."))
         repairs = int(input("Enter total cost of repairs."))
@@ -53,6 +56,7 @@ class Investment:
         TME = taxes + renovations + mortgage + repairs + vacancy + insurance + hoa + other_expenses
         return TME
     
+    #define the Cash on Cash Flow 
     def CashonCashFlow(self): 
         downpayment = int(input("Enter total cost of redownpayment."))
         closing_costs = int(input("Enter total cost of closing costs."))
@@ -61,6 +65,7 @@ class Investment:
         COC = downpayment + closing_costs + other_purchase_costs
         return COC
 
+    #define the ROI
     def ROIcalculations(self): 
         TMI = self.rental_income
         TME = self.expenses
@@ -70,4 +75,7 @@ class Investment:
         EROI = (Annual_Profits / COC)
         PROI = EROI * 100
         return EROI
+
+#CALLING THE CLASS
+
     
